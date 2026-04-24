@@ -3,7 +3,7 @@
 Tests the parse_svg function and related SVG handling functionality.
 """
 
-import pytest
+import pytest # type: ignore
 import tempfile
 from pathlib import Path
 from sign_pdf.parse_svg import parse_svg, SVGData, PathData
