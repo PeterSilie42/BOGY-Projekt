@@ -1,0 +1,28 @@
+{
+  "name": "Python + uv",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode",
+  "postCreateCommand": "if [ -f pyproject.toml ]; then uv sync; fi",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "workbench.colorCustomizations": {
+          "titleBar.activeBackground": "#42b883",
+          "titleBar.activeForeground": "#15202b",
+          "titleBar.inactiveBackground": "#42b88399",
+          "titleBar.inactiveForeground": "#15202b99"
+        }
+      }
+    }
+  }
+}
